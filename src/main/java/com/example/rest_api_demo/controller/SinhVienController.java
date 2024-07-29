@@ -3,6 +3,7 @@ package com.example.rest_api_demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +16,7 @@ import com.example.rest_api_demo.model.SinhVien;
 
 //Web Application: web được thiết kế kèm theo giao diện người dùng -> return url
 
-//Web Service: web được thiết kế để kết nối với nhiều phần mềm khác. -> ko return url
+//Web Service: web được thiết kế để kết nối với nhiều phần mềm khác. -> ko return url, khác mỗi return.
 //phần mềm khác: FE web web js gọi đến api -> hiển thị cho người dùng, 
 //				mobile gọi đến api -> hiển thị cho người dùng.
 
@@ -27,8 +28,8 @@ import com.example.rest_api_demo.model.SinhVien;
 //	PUT: update cập nhật dữ liệu
 //	DELETE: xóa dữ liệu
 
-
 @RestController
+@CrossOrigin(origins = {"http://127.0.0.1:5500/"})
 public class SinhVienController {
 	private List<SinhVien> users = new ArrayList<SinhVien>();
 	
